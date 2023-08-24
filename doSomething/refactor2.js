@@ -29,7 +29,7 @@ class DoSomething {
     let pageOffset = 0;
 
     while (primes.length <= MAX_VALUE) {
-      if (DoSomethingElse.isPrime(oddNum)) {
+      if (DoSomething.isPrime(oddNum)) {
         primes.push(oddNum);
       }
       oddNum += 2;
