@@ -14,6 +14,9 @@ Cada página exibe 200 Números primos, até atingirmos um total de 1000 número
 - Na linha 57, inicializar a variavel de controle diretamente dentro do loop `for` faria mais sentido, sendo ela usada somente neste escopo. E neste mesmo loop, a condição de quebra poderia ser simplificada, deixando `C < CC`.
 - No arquivo `refactor2.js`, foi trocado a validação se o número é um número primo, removendo as criações de `Array`, removendo dois loops `while`, tornando de mais facil leitura.
 
+### 3 - Refatore o código do arquivo utilizando conceitos de Clean Code, de maneira que o código se torne mais limpo, legível e de fácil manutenção.
+- [Query SQL](https://github.com/gabrielraeder/coopercarga-challenge/blob/main/query.sql)
+
 ### 4 - Explique como o conceito de middlewares no Express.js pode ser utilizado para evitar repetição de código.
 - Sendo uma função que possui acesso aos objetos de requisição (req), resposta (res) e chamada da próxima (next), nos dá liberdade de reutilizar o código escrito dentro deste em mais de uma rota. Isso nos dá liberdade de fazer a mesma ação em multiplas situações invocando este mesmo middleware. Nos dá um código mais organizado e evita a repetição desnecessária de lógica em várias partes da aplicação.
 
