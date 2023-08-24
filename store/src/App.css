@@ -1,0 +1,92 @@
+* {
+  box-sizing: border-box;
+}
+
+#root {
+  width: 100%;
+  text-align: center;
+}
+
+body {
+  display: flex;
+  align-items: start;
+}
+
+.card_list {
+  display: flex;
+  margin: 30px auto;
+  width: 90%;
+  justify-content: space-evenly;
+  gap: 10px;
+}
+
+.card {
+  padding: 10px;
+  transition: all 0.3 ease;
+}
+
+.card:hover {
+  transform: scale(1.01);
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1)
+}
+
+.filters_container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.form {
+  display: flex;
+}
+
+.cartBtn {
+  width: 80px;
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  padding: 15px 15px;
+  background-color: #e34d4d;
+  fill: black;
+  border: none;
+  border-radius: 100%;
+  cursor: pointer;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3 ease;
+}
+
+.cartBtn:hover {
+  transform: scale(1.02);
+  box-shadow: 5px 8px 12px rgba(0, 0, 0, 0.185);
+}
+
+.modalCartCard {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.modalCartCard img {
+  width: 50px;
+  border-radius: 100%;
+}
+
+.modalCartCard .cartText {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cartModalBody h3 {
+  width: fit-content;
+  margin-left: 55%;
+  background-color: #4de37088;
+  padding: 5px 10px;
+  border-radius: 12px;
+}
+
+.excludeBtn {
+  width: 30px;
+  fill: rgb(205, 0, 0);
+  cursor: pointer;
+}
