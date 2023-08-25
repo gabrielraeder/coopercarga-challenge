@@ -15,7 +15,8 @@ Cada página exibe 200 Números primos, até atingirmos um total de 1000 número
 - No arquivo `refactor2.js`, foi trocado a validação se o número é um número primo, removendo as criações de `Array`, removendo dois loops `while`, tornando de mais facil leitura.
 
 ### 3 - Refatore o código do arquivo utilizando conceitos de Clean Code, de maneira que o código se torne mais limpo, legível e de fácil manutenção.
-- [Query SQL](https://github.com/gabrielraeder/coopercarga-challenge/blob/main/query.sql)
+- [Refactor 1](https://github.com/gabrielraeder/coopercarga-challenge/blob/main/doSomething/refactor1.js)
+- [Refactor 2](https://github.com/gabrielraeder/coopercarga-challenge/blob/main/doSomething/refactor2.js)
 
 ### 4 - Explique como o conceito de middlewares no Express.js pode ser utilizado para evitar repetição de código.
 - Sendo uma função que possui acesso aos objetos de requisição (req), resposta (res) e chamada da próxima (next), nos dá liberdade de reutilizar o código escrito dentro deste em mais de uma rota. Isso nos dá liberdade de fazer a mesma ação em multiplas situações invocando este mesmo middleware. Nos dá um código mais organizado e evita a repetição desnecessária de lógica em várias partes da aplicação.
@@ -31,7 +32,16 @@ Cada página exibe 200 Números primos, até atingirmos um total de 1000 número
 
 #### Query builder
 ##### Vantagens
-- Sintaxe Mais Próxima do SQL
+- Sintaxe Mais Próxima do SQL.
 
 ##### Desvantagens
-- manutenção do esquema do banco de dados deve ser feita manualmente
+- manutenção do esquema do banco de dados deve ser feita manualmente.
+
+### 6 - Faça uma query em SQL que traga em cada linha o nome de jogadores que se enfrentaram mais de duas vezes, onde em cada partida a soma dos pontos foi maior que 30 e a duração do jogo foi maior que 90 minutos. Não podem haver resultados repetidos.
+- [Query SQL](https://github.com/gabrielraeder/coopercarga-challenge/blob/main/query.sql)
+
+### 7 - Dado o array no arquivo data.json, crie um interface em React.js, CSS e Bootstrap mostre os itens como se fosse um marketplace de roupas.
+
+- [Store Code](https://github.com/gabrielraeder/coopercarga-challenge/blob/main/store)
+- [Deploy](https://coopercarga-challenge.vercel.app/)
+- [Projeto similar](https://gabrielraeder.github.io/online-store-project/)
