@@ -3,31 +3,37 @@
 }
 
 #root {
-  width: 100%;
   text-align: center;
+  width: 100%;
 }
 
 body {
-  display: flex;
   align-items: start;
+  display: flex;
 }
 
 .card_list {
   display: flex;
+  gap: 10px;
+  justify-content: space-evenly;
   margin: 30px auto;
   width: 90%;
-  justify-content: space-evenly;
-  gap: 10px;
 }
 
 .card {
+  cursor: pointer;
   padding: 10px;
   transition: all 0.3 ease;
 }
 
 .card:hover {
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   transform: scale(1.01);
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1)
+}
+
+.card img {
+  border: 1px solid rgb(231, 231, 231);
+  border-radius: 10px;
 }
 
 .filters_container {
@@ -40,65 +46,65 @@ body {
 }
 
 .cartBtn {
-  width: 80px;
-  position: fixed;
-  bottom: 50px;
-  right: 50px;
-  padding: 15px 15px;
   background-color: #c4c4c4;
-  fill: black;
   border: none;
   border-radius: 100%;
-  cursor: pointer;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  bottom: 50px;
+  cursor: pointer;
+  fill: black;
+  padding: 15px 15px;
+  position: fixed;
+  right: 50px;
   transition: all 0.3 ease;
+  width: 80px;
 }
 
 .cartBtn:hover {
-  transform: scale(1.02);
   box-shadow: 5px 8px 12px rgba(0, 0, 0, 0.185);
+  transform: scale(1.02);
 }
 
 .modalCartCard {
-  display: flex;
   align-items: flex-start;
+  display: flex;
   justify-content: space-between;
 }
 
 .modalCartCard img {
-  width: 50px;
   border-radius: 100%;
+  width: 50px;
 }
 
 .modalCartCard .cartText {
+  align-items: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: space-between;
 }
 
 .cartModalBody h3 {
-  width: fit-content;
-  margin-left: 55%;
   background-color: #4de37088;
-  padding: 5px 10px;
   border-radius: 12px;
+  margin-left: 55%;
+  padding: 5px 10px;
+  width: fit-content;
 }
 
 .excludeBtn {
-  width: 30px;
-  fill: rgb(205, 0, 0);
   cursor: pointer;
+  fill: rgb(205, 0, 0);
+  width: 30px;
 }
 
 .cartQuantity {
-  position: absolute;
   background-color: rgb(223, 0, 0);
-  right: -5px;
-  top: -10px;
+  border-radius: 100%;
+  color: white;
   font-size: 18px;
   font-weight: 700;
-  color: white;
-  border-radius: 100%;
   padding: 5px 12px;
+  position: absolute;
+  right: -5px;
+  top: -10px;
 }
