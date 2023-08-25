@@ -3,8 +3,8 @@ class DoSomething {
     const M = 1000;
     const RR = 50;
     const CC = 4;
-    const P = Array(M + 1).fill(0);
-    const MULT = Array(30 + 1).fill(0);
+    const P = Array(M).fill(0);
+    const MULT = Array(31).fill(0);
     let PAGENUMBER = 1;
     let PAGEOFFSET = 1;
     let J = 1;
