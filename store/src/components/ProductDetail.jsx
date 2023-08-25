@@ -1,7 +1,12 @@
 import {  Button, Modal } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import PropTypes from 'prop-types';
-export default function ProductDetail({ addBtn, showModal, handler, item }) {
+import { useContext } from 'react';
+import Context from '../context/context';
+export default function ProductDetail({ showModal, handler, item }) {
+  const {
+    addItemToCart,
+  } = useContext(Context);
 
   return (
     <Modal show={showModal} onHide={handler}>
@@ -18,7 +23,7 @@ export default function ProductDetail({ addBtn, showModal, handler, item }) {
         <p>Sizes: {item.available_sizes.reduce((acc, curr) => acc + '  ' + curr,'')}</p>
       </Modal.Body>
       <Modal.Footer>
-        <Button onClick={addBtn}>Add to Cart</Button>
+        <Button onClick={() => addItemToCart(item)}>Add to Cart</Button>
       </Modal.Footer>
     </Modal>
   );

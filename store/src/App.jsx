@@ -5,6 +5,7 @@ import CartButton from './components/CartButton';
 import CartModal from './components/CartModal';
 import MyNavbar from './components/Navbar';
 import { readSavedCart } from './utils/localStorage';
+import Provider from './context/Provider';
 
 function App() {
   const [showCart, setShowCart] = useState(false);
@@ -16,12 +17,12 @@ function App() {
   };
 
   return (
-    <>
+    <Provider>
       <MyNavbar/>
       <CardList/>
-      <CartButton handler={handleChange}/>
+      <CartButton storageCart={cart} showCart={showCart} handler={handleChange}/>
       <CartModal storageCart={cart} showCart={showCart} handler={handleChange}/>
-    </>
+    </Provider>
   );
 }
 

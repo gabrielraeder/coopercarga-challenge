@@ -3,17 +3,12 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import PropTypes from 'prop-types';
 import { useState } from 'react';
 import ProductDetail from './ProductDetail';
-import { addToCart } from '../utils/localStorage';
 
 const StoreItem = ({ item }) => {
   const [showModal, setShowModal] = useState(false);
 
   const handleShow = () => {
     setShowModal((prev) => !prev);
-  };
-
-  const addToItemToCart = () => {
-    addToCart({ ...item, quantity: 1 });
   };
 
   return (
@@ -25,8 +20,7 @@ const StoreItem = ({ item }) => {
           <Card.Text>${item.price}</Card.Text>
         </Card.Body>
       </Card>
-      {/* <button onClick={addToItemToCart}>Add to Cart</button> */}
-      <ProductDetail addBtn={addToItemToCart} showModal={showModal} handler={handleShow} item={item}/>
+      <ProductDetail showModal={showModal} handler={handleShow} item={item}/>
     </>
   );
 };

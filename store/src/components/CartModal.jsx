@@ -1,22 +1,19 @@
 /* eslint-disable max-len */
 import { Modal } from 'react-bootstrap';
-import { readSavedCart, removeAllProduct } from '../utils/localStorage';
 import PropTypes from 'prop-types';
-import { useEffect, useState } from 'react';
+import { useContext } from 'react';
+import Context from '../context/context';
 
-export default function CartModal({ storageCart, showCart, handler }) {
-  const [cart, setCart] = useState(storageCart);
-  useEffect(() => {
-    setCart(readSavedCart());
-  }, [showCart]);
-  
-  const removeProduct = (item) => {
-    removeAllProduct(item);
-    setCart(readSavedCart());
-  };
+export default function CartModal() {
+  const {
+    showCart,
+    cart,
+    handleChange,
+    removeProduct,
+  } = useContext(Context);
 
   return (
-    <Modal show={showCart} onHide={handler}>
+    <Modal show={showCart} onHide={handleChange}>
       <Modal.Header closeButton>
         <Modal.Title>Cart</Modal.Title>
       </Modal.Header>
