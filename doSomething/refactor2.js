@@ -1,51 +1,47 @@
 class DoSomething {
   static isPrime(num) {
-    if (num <= 1) {
-      return false;
-    }
-    if (num <= 3) {
-      return true;
-    }
-    if (num % 2 === 0 || num % 3 === 0) {
-      return false;
-    }
-    let i = 5;
-    while (i * i <= num) {
+    if (num <= 1) return false;
+    if (num <= 3) return true;
+    if (num % 2 === 0 || num % 3 === 0) return false;
+
+    for (let i = 5; i * i <= num; i += 6) {
       if (num % i === 0 || num % (i + 2) === 0) {
         return false;
       }
-      i += 6;
     }
     return true;
   }
 
-  static main() {
-    const MAX_VALUE = 1000;
-    const ROWS_PER_PAGE = 50;
-    const NUM_COLUMNS = 4;
+  static firstThousandPrimes() {
+    const maxLength = 1000;
     const primes = [2];
-    let oddNum = 3;
-    let pageNumber = 1;
-    let pageOffset = 0;
 
-    while (primes.length <= MAX_VALUE) {
+    for (let oddNum = 3; primes.length <= maxLength; oddNum += 2) {
       if (DoSomething.isPrime(oddNum)) {
         primes.push(oddNum);
       }
-      oddNum += 2;
     }
+    return primes
+  }
 
-    while (pageOffset + 1 <= MAX_VALUE) {
+  static main() {
+    const primes = DoSomething.firstThousandPrimes();
+    const rowsPerPage = 50;
+    const numOfColumns = 4;
+    let pageNumber = 1;
+    let pageOffset = 0;
+
+    while (pageOffset + 1 < primes.length) {
       console.log("Page ", pageNumber);
-      for (let rowOffset = pageOffset; rowOffset <= pageOffset + ROWS_PER_PAGE - 1; rowOffset++) {
+      for (let rowOffset = pageOffset; rowOffset < pageOffset + rowsPerPage; rowOffset++) {
         let rowData = [];
-        for (let column = 0; column < NUM_COLUMNS; column++) {
-          rowData.push(primes[rowOffset + column * ROWS_PER_PAGE]);
+        for (let column = 0; column < numOfColumns; column++) {
+          rowData.push(primes[rowOffset + column * rowsPerPage]);
         }
         console.log(rowData.join('|'));
       }
       pageNumber++;
-      pageOffset += ROWS_PER_PAGE * NUM_COLUMNS;
+      pageOffset += rowsPerPage * numOfColumns;
     }
   }
 }

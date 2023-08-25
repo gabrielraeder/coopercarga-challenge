@@ -42,7 +42,7 @@ class DoSomething {
       console.log("Page ", PAGENUMBER);
       for (
         let ROWOFFSET = PAGEOFFSET;
-        ROWOFFSET <= PAGEOFFSET + RR - 1;
+        ROWOFFSET < PAGEOFFSET + RR;
         ROWOFFSET++
       ) {
         let aux = [];
