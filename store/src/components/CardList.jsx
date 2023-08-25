@@ -78,7 +78,7 @@ export default function CardList() {
           type="sports"
         />
       </div>
-      <div className='card_list'>
+      <div className='card_list' data-testid="card_list">
         {
           filteredSport.map((item, index) => (
             <Card key={index} item={item} />

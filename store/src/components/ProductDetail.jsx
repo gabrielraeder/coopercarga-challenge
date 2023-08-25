@@ -23,7 +23,7 @@ export default function ProductDetail({ showModal, handler, item }) {
         <p>Sizes: {item.available_sizes.reduce((acc, curr) => acc + '  ' + curr,'')}</p>
       </Modal.Body>
       <Modal.Footer>
-        <Button onClick={() => addItemToCart(item)}>Add to Cart</Button>
+        <Button onClick={() => addItemToCart(item)} className={item.name}>Add to Cart</Button>
       </Modal.Footer>
     </Modal>
   );
@@ -32,7 +32,5 @@ export default function ProductDetail({ showModal, handler, item }) {
 ProductDetail.propTypes = {
   item: PropTypes.object.isRequired,
   handler: PropTypes.func.isRequired,
-  addBtn: PropTypes.func.isRequired,
   showModal: PropTypes.bool.isRequired,
-  
 };

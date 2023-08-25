@@ -13,7 +13,7 @@ const StoreItem = ({ item }) => {
 
   return (
     <>
-      <Card style={{ width: '18rem' }} className="card" onClick={handleShow}>
+      <Card style={{ width: '18rem' }} className="card" onClick={handleShow} data-testid="card" >
         <Card.Img src={item.image_url} />
         <Card.Body>
           <Card.Title>{item.name}</Card.Title>

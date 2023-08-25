@@ -12,6 +12,10 @@ export default function Provider({ children }) {
   const getQuantity = () => setQuantity(cart.reduce((acc, curr) => acc + curr.quantity, 0));
 
   useEffect(() => {
+    setCart(readSavedCart());
+  }, []);
+
+  useEffect(() => {
     getQuantity();
   }, [cart]);
 
@@ -33,8 +37,6 @@ export default function Provider({ children }) {
     getQuantity();
   };
 
-
-
   const context = {
     showCart,
     cart,
@@ -42,6 +44,7 @@ export default function Provider({ children }) {
     removeProduct,
     addItemToCart,
     quantity,
+    getQuantity,
   };
 
   return (

@@ -27,14 +27,6 @@ export const addToCart = (product) => {
   }
 };
 
-export const removeFromCart = (product) => {
-  const savedCart = readSavedCart();
-  const filterIdenticalProducts = savedCart.filter((item) => item.name === product.name);
-  const filterOtherProducts = savedCart.filter((item) => item.name !== product.name);
-  filterIdenticalProducts.pop();
-  saveCartProducts([...filterIdenticalProducts, ...filterOtherProducts]);
-};
-
 export const removeAllProduct = (product) => {
   const savedCart = readSavedCart();
   saveCartProducts(savedCart.filter((item) => item.name !== product.name));
