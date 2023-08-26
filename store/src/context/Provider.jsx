@@ -8,6 +8,7 @@ export default function Provider({ children }) {
   const [showCart, setShowCart] = useState(false);
   const [cart, setCart] = useState([]);
   const [quantity, setQuantity] = useState(0);
+  const [added, setAdded] = useState(false);
 
   const getQuantity = () => setQuantity(cart.reduce((acc, curr) => acc + curr.quantity, 0));
 
@@ -18,6 +19,10 @@ export default function Provider({ children }) {
   useEffect(() => {
     getQuantity();
   }, [cart]);
+
+  useEffect(() => {
+    
+  }, []);
 
   const handleChange = () => {
     setCart(readSavedCart());
@@ -35,6 +40,10 @@ export default function Provider({ children }) {
     addToCart({ ...item, quantity: 1 });
     setCart(readSavedCart());
     getQuantity();
+    setAdded(true);
+    setTimeout(() => {
+      setAdded(false);
+    }, 700);
   };
 
   const context = {
@@ -45,6 +54,7 @@ export default function Provider({ children }) {
     addItemToCart,
     quantity,
     getQuantity,
+    added,
   };
 
   return (

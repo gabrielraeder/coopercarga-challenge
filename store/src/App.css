@@ -94,7 +94,7 @@ body {
 .cartModalBody h3 {
   background-color: #4de37088;
   border-radius: 12px;
-  margin-left: 55%;
+  margin-left: auto;
   padding: 5px 10px;
   width: fit-content;
 }
@@ -115,6 +115,15 @@ body {
   position: absolute;
   right: -5px;
   top: -10px;
+}
+
+.modal-footer span svg {
+  width: 25px;
+  fill: green;
+}
+
+.green {
+  background-color: green !important;
 }
 
 @media screen and (max-width: 1200px) {

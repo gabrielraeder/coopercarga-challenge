@@ -25,7 +25,7 @@ export default function CartModal() {
                 <h5>{item.name}</h5>
                 <p>{item.quantity} x ${item.price}</p>
               </div>
-              <h5>${item.price * item.quantity}</h5>
+              <h5>${(item.price * item.quantity).toFixed(2)}</h5>
               <div onClick={() => removeProduct(item)}>
                 <svg 
                   className="excludeBtn" 
