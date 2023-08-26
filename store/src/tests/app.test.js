@@ -1,7 +1,6 @@
 /* eslint-disable no-undef */
 import '@testing-library/jest-dom';
-import React, { useEffect } from 'react';
-import { render, screen, waitFor, awaitElement } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import App from '../App';
 import userEvent from '@testing-library/user-event';
 
@@ -13,10 +12,10 @@ describe('Test elements', () => {
     expect(screen.getByRole('link', { name: /my store/i })).toBeInTheDocument();
     expect(screen.getByRole('link', { name: /home/i })).toBeInTheDocument();
     expect(screen.getByRole('link', { name: /products/i })).toBeInTheDocument();
-    expect(screen.getByText(/filter by Size/i)).toBeInTheDocument();
-    expect(screen.getByText(/filter by Foot Size/i)).toBeInTheDocument();
-    expect(screen.getByText(/filter by Type/i)).toBeInTheDocument();
-    expect(screen.getByText(/filter by sport/i)).toBeInTheDocument();
+    expect(screen.getByText('Size')).toBeInTheDocument();
+    expect(screen.getByText('Foot Size')).toBeInTheDocument();
+    expect(screen.getByText('Type')).toBeInTheDocument();
+    expect(screen.getByText('Sport')).toBeInTheDocument();
     expect(screen.getAllByRole('combobox')).toHaveLength(4);
     expect(screen.getAllByTestId('card')).toHaveLength(5);
     expect(screen.getByText(/camiseta do brasil/i)).toBeInTheDocument();

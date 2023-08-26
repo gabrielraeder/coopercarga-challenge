@@ -17,7 +17,7 @@ export default function MyNavbar() {
           <Nav className="me-auto">
             <Nav.Link href="#home">Home</Nav.Link>
             <Nav.Link href="#link">Products</Nav.Link>
-            <Nav.Link onClick={handleChange}>Cart</Nav.Link>
+            {/* <Nav.Link onClick={handleChange}>Cart</Nav.Link> */}
           </Nav>
         </Navbar.Collapse>
       </Container>

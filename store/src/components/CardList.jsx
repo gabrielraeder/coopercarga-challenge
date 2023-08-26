@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import Card from './Card';
 import dataJson from '../../data.json';
 import FilterForm from './FilterForm';
+import { Container, Nav, Navbar } from 'react-bootstrap';
 
 export default function CardList() {
   const [data, setData] = useState([]);
@@ -48,36 +49,43 @@ export default function CardList() {
   
   return (
     <div className="cards_container">
-      <div className='filters_container'>
-        <FilterForm
-          tag="Filter by Size"
-          filter={filterSize}
-          onFilterChange={ ({ target: { value } }) => setFilterSize(value) }
-          values={uniqueSizes}
-          type="sizes"
-        />
-        <FilterForm
-          tag="Filter by Foot Size"
-          filter={filterSize}
-          onFilterChange={({ target: { value } }) => setFilterSize(value)}
-          values={uniqueFootSizes}
-          type="sizes"
-        />
-        <FilterForm
-          tag="Filter by Type"
-          filter={filterType}
-          onFilterChange={({ target: { value } }) => setFilterType(value)}
-          values={uniqueTypes}
-          type="types"
-        />
-        <FilterForm
-          tag="Filter by Sport"
-          filter={filterSport}
-          onFilterChange={({ target: { value } }) => setFilterSport(value)}
-          values={uniqueSports}
-          type="sports"
-        />
-      </div>
+      <Navbar bg="light" expand="md" className='filters_container'>
+        <Container>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse id="basic-navbar-nav">
+            <Nav className="me-auto filters">
+              <FilterForm
+                tag="Size"
+                filter={filterSize}
+                onFilterChange={ ({ target: { value } }) => setFilterSize(value) }
+                values={uniqueSizes}
+                type="sizes"
+              />
+              <FilterForm
+                tag="Foot Size"
+                filter={filterSize}
+                onFilterChange={({ target: { value } }) => setFilterSize(value)}
+                values={uniqueFootSizes}
+                type="sizes"
+              />
+              <FilterForm
+                tag="Type"
+                filter={filterType}
+                onFilterChange={({ target: { value } }) => setFilterType(value)}
+                values={uniqueTypes}
+                type="types"
+              />
+              <FilterForm
+                tag="Sport"
+                filter={filterSport}
+                onFilterChange={({ target: { value } }) => setFilterSport(value)}
+                values={uniqueSports}
+                type="sports"
+              />
+            </Nav>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
       <div className='card_list' data-testid="card_list">
         {
           filteredSport.map((item, index) => (
