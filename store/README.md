@@ -1,18 +1,18 @@
-# Meu-Time
+# Store
 
 ### You can see the application running on [Vercel here](https://coopercarga-challenge.vercel.app/).
 
 ## Build with:
   - Javascript
   - React
-  - Css
+  - CSS
   - React-Bootstrap
   - Jest
   - RTL
 
 ## Installation
 
-<details>
+<!-- <details> 
 <summary>with Docker</summary>
 
 ```sh
@@ -32,13 +32,13 @@ npm run test:coverage
 ```
 </details>
 
-<br/>
+<br/> -->
 
-<details>
-<summary>without Docker</summary>
+<!-- <details>
+<summary>without Docker</summary> -->
 
 ```sh
-cd app && npm install
+cd store && npm install
 ```
 #### Start application with:
 ```sh
@@ -54,7 +54,7 @@ npm test
 npm run test:coverage
 ```
 
-</details>
+<!-- </details> -->
 
 <br/>
 
