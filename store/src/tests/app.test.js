@@ -160,6 +160,8 @@ describe('Test Modals', () => {
     const bulls = screen.getAllByTestId('card')[1];
 
     await userEvent.click(brasil);
+    expect(screen.getByRole('button', { name: /add to cart/i })).toBeDisabled();
+    await userEvent.selectOptions(screen.getByTestId('sizeSelect'), 'M');
     await userEvent.click(screen.getByRole('button', { name: /add to cart/i }));
     await userEvent.click(screen.getByRole('button', { name: /add to cart/i }));
     await userEvent.click(cartBtn);
@@ -168,6 +170,7 @@ describe('Test Modals', () => {
 
     await userEvent.click(brasil);
     await userEvent.click(bulls);
+    await userEvent.selectOptions(screen.getByTestId('sizeSelect'), 'G');
     await userEvent.click(screen.getByRole('button', { name: /add to cart/i }));
     await userEvent.click(cartBtn);
     await userEvent.click(cartBtn);

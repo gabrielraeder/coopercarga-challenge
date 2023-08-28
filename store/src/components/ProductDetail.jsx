@@ -31,7 +31,7 @@ export default function ProductDetail({ showModal, handler, item }) {
             ? <Form>
               <Form.Group controlId="filter">
                 <Form.Label>{'Sizes'}</Form.Label>
-                <Form.Select as="select" value={size} onChange={({ target: { value } }) => setSize(value)}>
+                <Form.Select data-testid="sizeSelect" as="select" value={size} onChange={({ target: { value } }) => setSize(value)}>
                   <option value=""></option>
                   {
                     item.available_sizes.map((data, idx) => (
