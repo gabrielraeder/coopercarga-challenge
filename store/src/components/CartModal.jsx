@@ -23,7 +23,7 @@ export default function CartModal() {
               <img src={item.image_url} alt="" />
               <div className='cartText'>
                 <h5>{item.name}</h5>
-                <p>{item.quantity} x ${item.price}</p>
+                <p>{item.quantity} x ${item.price} | Size: {item.size}</p>
               </div>
               <h5>${(item.price * item.quantity).toFixed(2)}</h5>
               <div onClick={() => removeProduct(item)}>

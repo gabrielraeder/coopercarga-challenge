@@ -142,6 +142,12 @@ body {
 
 .green {
   background-color: green !important;
+  border: 1px solid rgb(30, 198, 30) !important;
+}
+
+.red {
+  background-color: red !important;
+  border: 1px solid red !important;
 }
 
 @media screen and (max-width: 1200px) {

@@ -1,10 +1,14 @@
 /* eslint-disable max-len */
-import {  Button, Modal } from 'react-bootstrap';
+import {  Button, Form, Modal } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import PropTypes from 'prop-types';
 import { useContext, useState } from 'react';
 import Context from '../context/context';
+import { useEffect } from 'react';
+
 export default function ProductDetail({ showModal, handler, item }) {
+  const [size, setSize] = useState('');
+
   const {
     addItemToCart,
     added,
@@ -22,7 +26,24 @@ export default function ProductDetail({ showModal, handler, item }) {
         </div>
         <p>Description: {item.details}</p>
         <p>Price: ${item.price}</p>
-        <p>Sizes: {item.available_sizes.reduce((acc, curr) => acc + '  ' + curr,'')}</p>
+        {
+          item.available_sizes.length 
+            ? <Form>
+              <Form.Group controlId="filter">
+                <Form.Label>{'Sizes'}</Form.Label>
+                <Form.Select as="select" value={size} onChange={({ target: { value } }) => setSize(value)}>
+                  <option value=""></option>
+                  {
+                    item.available_sizes.map((data, idx) => (
+                      <option key={idx} value={data}>{data}</option>
+                    ))
+                  }
+                </Form.Select>
+              </Form.Group>
+            </Form>
+            : <span><b>Product unavailable</b></span>
+        }
+        
       </Modal.Body>
       <Modal.Footer>
         {
@@ -39,7 +60,12 @@ export default function ProductDetail({ showModal, handler, item }) {
             </svg>
           </span>
         }
-        <Button onClick={() => addItemToCart(item)} className={added && 'green'}>Add to Cart</Button>
+        <Button
+          onClick={() => addItemToCart({ ...item, size })}
+          className={`${added && 'green'} ${!item.available_sizes.length && 'red'}`}
+          disabled={!item.available_sizes.length || !size}>
+            Add to Cart
+        </Button>
       </Modal.Footer>
     </Modal>
   );
